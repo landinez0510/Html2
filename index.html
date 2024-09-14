@@ -7,171 +7,153 @@
   <title>Validacion Formularios</title>
 </head>
 
-<body>
-  <h1>Formulario de registro</h1>
-</body>
-<hr>
-
-<body>
-  <form action>
-
+<form action>
+  <div>
+    <!-- campo solo letras mayusculas y minusculas -->
+    <label for="nombre"> Nombre</label>
     <div>
-      <!-- campo solo letras mayusculas y minusculas -->
-      <label for="nombre"> Nombre</label>
-      <div>
-        <input type="text" id="nombre" name="Nombre" pattern="[a-z A-Z]+" required>
-      </div>
+      <input type="text" id="nombre" name="Nombre" pattern="[a-z A-Z]+" required>
+    </div>
+    <hr>
+  </div>
+  <div>
+    <!-- campo solo letras minusculas -->
+    <label for="apellido">apellido</label><br>
+    <div>
+      <input type="text" id="apellido" name="apellido" pattern="[a-z A-Z]+" required>
       <hr>
     </div>
     <div>
       <!-- campo solo letras minusculas -->
-      <label for="apellido">apellido</label><br>
+      <label for="color"> color</label>
       <div>
-        <input type="text" id="apellido" name="apellido" pattern="[a-z A-Z]+" required>
-        <hr>
+        <input type="color">
       </div>
+      <hr>
+    </div>
+    <!-- campo solo numeros -->
+    <div>
+      <label for="Edad"> edad</label>
       <div>
-        <!-- campo solo letras minusculas -->
-        <label for="color"> color</label>
-        <div>
-          <input type="color">
-        </div>
-        <hr>
+        <input type="number" id="edad" name="edad" min="1" max="150" required>
       </div>
-
-      <!-- campo solo numeros -->
+      <hr>
+    </div>
+    <!-- Campo solo numeros mediante modificacion-->
+    <div>
+      <label for="Numeros">Numeros</label>
       <div>
-        <label for="Edad"> edad</label>
-        <div>
-          <input type="number" id="edad" name="edad" min="1" max="150" required>
-        </div>
-        <hr>
+        <input type="number" id="numeros" name="numeros" min="0" max="infinity" required>
       </div>
-
-      <!-- Campo solo numeros mediante modificacion-->
+      <hr>
+    </div>
+    <!-- validar que le usuario solo pueda ingresar numeros positivos -->
+    <div>
+      <label for="Positivos">Positivos</label>
       <div>
-        <label for="Numeros">Numeros</label>
-        <div>
-          <input type="number" id="numeros" name="numeros" min="0" max="infinity" required>
-        </div>
-        <hr>
+        <input type="number" id="positivos" name="positivos" min="0" max="10" required>
       </div>
-
-      <!-- validar que le usuario solo pueda ingresar numeros positivos -->
+      <hr>
+    </div>
+    <!--El usuario podra incrematar de 0.5 en 0.5 y solo podra incremantar hasta 20, igualmente no podra decrementar menos de 10 y al iniciar el formulario iniciar con 15 -->
+    <div>
+      <label for="Maximo-Minimo">Maximo-Minimo</label>
       <div>
-        <label for="Positivos">Positivos</label>
-        <div>
-          <input type="number" id="positivos" name="positivos" min="0" max="10" required>
-        </div>
-        <hr>
+        <input type="number" id="maximo-minimo" name=maximo-minimo min="1" max="15" required>
       </div>
-
-      <!--El usuario podra incrematar de 0.5 en 0.5 y solo podra incremantar hasta 20, igualmente no podra decrementar menos de 10 y al iniciar el formulario iniciar con 15 -->
+      <hr>
+    </div>
+    <!-- El usuario podra seleccionar la fecha de nacimiento -->
+    <div>
+      <label for="Fecha Nacimiento">Fecha Nacimiento</label>
       <div>
-        <label for="Maximo-Minimo">Maximo-Minimo</label>
-        <div>
-          <input type="number" id="maximo-minimo" name=maximo-minimo min="1" max="15" required>
-        </div>
-        <hr>
+        <input type="date" id="fecha" name="fecha nacimiento" required>
       </div>
-
-      <!-- El usuario podra seleccionar la fecha de nacimiento -->
+      <hr>
+    </div>
+    <!-- El usuario podra seleccionar la hora de registro -->
+    <div>
+      <label for="Hora">Hora</label>
       <div>
-        <label for="Fecha Nacimiento">Fecha Nacimiento</label>
-        <div>
-          <input type="date" id="fecha" name="fecha nacimiento" required>
-        </div>
-        <hr>
+        <input type="time" id="hora" name="hora" required>
       </div>
-
-      <!-- El usuario podra seleccionar la hora de registro -->
+      <hr>
+    </div>
+    <!-- el usuario podra seleccionar la ciudad -->
+    <div>
+      <label for="Ciudad">Ciudad</label>
+    </div>
+    <div>
+      <select name="ciudad" id="ciudad">
+        <option value="bucaramanga">Bucaramanga</option>
+        <option value="bogota">Bogota</option>
+        <option value="cali">Cali</option>
+        <option value="medellin">Medellin</option>
+        <option value="otro">Otro</option>
+      </select>
+      <hr>
+    </div>
+    <div>
+      <!-- El usuario podra seleccionar su genero y solo podra selecciona un unico genero (Masculino, Femenino , Otro) -->
+      <label for="Genero">Genero</label>
       <div>
-        <label for="Hora">Hora</label>
-        <div>
-          <input type="time" id="hora" name="hora" required>
-        </div>
-        <hr>
       </div>
-
-      <!-- el usuario podra seleccionar la ciudad -->
+      <select name="Genero" id="Genero">
+        <option value="masculino">Masculino</option>
+        <option value="femenino">Femenino</option>
+        <option value="otro">Otro</option>
+      </select>
+      <hr>
+    </div>
+    <div>
+      <!-- El usuario podra seleccionar varias materias, (HTML, CSS, JS, JAVA, PYTHON, PHP) este campo es opcional es decir se debe trasnformar pero no es obligatorio estar seleccionada alguna materia -->
+      <label for="Materias">Materias</label>
       <div>
-        <label for="Ciudad">Ciudad</label>
-      </div>
-      <div>
-        <select name="ciudad" id="ciudad">
-          <option value="bucaramanga">Bucaramanga</option>
-          <option value="bogota">Bogota</option>
-          <option value="cali">Cali</option>
-          <option value="medellin">Medellin</option>
-          <option value="otro">Otro</option>
+        <select name="materias" id="Materias">
+          <option value="html">Html</option>
+          <option value="css">CSS</option>
+          <option value="js">JS</option>
+          <option value="java">JAVA</option>
+          <option value="python">PYTHON</option>
+          <option value="php">PHP</option>
         </select>
-        <hr>
       </div>
+      <hr>
+    </div>
+    <div>
+      <!-- El usuario podra seleccionar varias imagenes pero el formato valido es .jpg y .png -->
+      <label for="Archivos">Archivos</label>
       <div>
-        <!-- El usuario podra seleccionar su genero y solo podra selecciona un unico genero (Masculino, Femenino , Otro) -->
-        <label for="Genero">Genero</label>
-        <div>
-        </div>
-        <select name="Genero" id="Genero">
-          <option value="masculino">Masculino</option>
-          <option value="femenino">Femenino</option>
-          <option value="otro">Otro</option>
-        </select>
-        <hr>
+        <input type="file" id="archivos" name="archivos" accept=".jpg,.png" required>
       </div>
+      <hr>
+    </div>
+    <div>
+      <!-- El usuario podra ingresar su contraseña -->
+      <label for="Contraseña">Contraseña</label>
       <div>
-        <!-- El usuario podra seleccionar varias materias, (HTML, CSS, JS, JAVA, PYTHON, PHP) este campo es opcional es decir se debe trasnformar pero no es obligatorio estar seleccionada alguna materia -->
-        <label for="Materias">Materias</label>
-        <div>
-          <select name="materias" id="Materias">
-            <option value="html">Html</option>
-            <option value="css">CSS</option>
-            <option value="js">JS</option>
-            <option value="java">JAVA</option>
-            <option value="python">PYTHON</option>
-            <option value="php">PHP</option>
-          </select>
-        </div>
-        <hr>
+        <input type="text" id="password" name="password" required>
       </div>
+      <hr>
+    </div>
+    <div>
+      <!-- Campo para que el aprendiz ingrese su nombre, este campo debe ser de solo lectura, es decir debe estar bloqueado, es decir debe estar bloqueado y al iniciar el formulario debe estar lleno con el nombre del aprendiz -->
+      <label for="Aprendiz">Aprendiz</label>
       <div>
-        <!-- El usuario podra seleccionar varias imagenes pero el formato valido es .jpg y .png -->
-        <label for="Archivos">Archivos</label>
-        <div>
-          <input type="file" id="archivos" name="archivos" accept=".jpg,.png" required>
-        </div>
-        <hr>
+        <input type="text" name="aprendiz" placeholder="aprendiz" pattern="[a-z A-Z]+" required id="aprendiz">
       </div>
-      <div>
-        <!-- El usuario podra ingresar su contraseña -->
-        <label for="Contraseña">Contraseña</label>
-        <div>
-          <input type="text" id="password" name="password" required>
-        </div>
-        <hr>
-      </div>
-      <div>
-        <!-- Campo para que el aprendiz ingrese su nombre, este campo debe ser de solo lectura, es decir debe estar bloqueado, es decir debe estar bloqueado y al iniciar el formulario debe estar lleno con el nombre del aprendiz -->
-        <label for="Aprendiz">Aprendiz</label>
-        <div>
-          <input type="text" name="aprendiz" placeholder="aprendiz" pattern="[a-z A-Z]+" required id="aprendiz">
-
-        </div>
-        <hr>
-      </div>
-      <div>
-        <button type="button">validar Formulario</button>
-
-      </div>
-  </form>
-    <script>
-      //validacion del formulario
-      const formulario = document.getElementById("formulario");
-      formulario.addEventListener("submit", function (event) {
-        //logica adicional de validacion aqui si es necesario 
-        alert("formulario enviado con exito!");
-      });
-    </script>
+      <hr>
+    </div>
+    <button type="button">validar Formulario</button>
+  </div>
+</form>
+<script>
+  //validacion del formulario
+  const formulario = document.getElementById("formulario");
+  formulario.addEventListener("submit", function (event) {
+    alert("formulario enviado con exito!");
+  });
+</script>
 </body>
 
 </html>
